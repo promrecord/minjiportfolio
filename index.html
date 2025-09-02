@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>뉴스클리핑</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 상단 바 (심플 카피) -->
+  <header class="topbar">
+    <div class="topbar__left">
+      <a href="#" class="brand" aria-label="홈으로">Careet</a>
+      <nav class="gnb" aria-label="주요 메뉴">
+        <a href="#">콘텐츠 보기</a>
+        <span class="dot">•</span>
+        <a href="#">트렌드 레터</a>
+      </nav>
+    </div>
+    <div class="topbar__right">
+      <div class="mini-search" role="search">
+        <input type="search" placeholder="검색어를 입력해 보세요." aria-label="사이트 검색" />
+        <button class="icon-btn" aria-label="검색">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M20 20L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <button class="ghost-btn">로그인</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">News clipping</p>
+      <h1 class="title">뉴스클리핑</h1>
+      <p class="subtitle">매일 아침 읽어야 하는 캐릿 추천 기사 읽기</p>
+
+      <!-- 검색창 (리스트 필터) -->
+      <label class="search" aria-label="뉴스클리핑 검색">
+        <input id="searchInput" type="search" placeholder="다시 읽고 싶은 뉴스가 있나요?" />
+        <svg class="search__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"></circle>
+          <path d="M20 20L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </label>
+    </section>
+
+    <!-- 날짜 그룹과 기사 카드가 JS로 렌더링 -->
+    <div id="groups" class="groups" aria-live="polite"></div>
+    <p id="emptyMsg" class="empty" role="status">검색 결과가 없습니다.</p>
+  </main>
+
+  <!-- 하단 토스트 -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
